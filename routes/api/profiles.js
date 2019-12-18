@@ -5,6 +5,7 @@ const passport = require('passport');
 
 const Profile = require('../../models/Profile');
 
+// 测试端口好不好用
 // @route  GET api/profiles/test
 // @desc   返回的请求的json数据
 // @access public
@@ -103,7 +104,7 @@ router.post(
 // @access Private
 router.delete(
   '/delete/:id',
-  passport.authenticate('jwt', { session: false }),
+  //passport.authenticate('jwt', { session: false }),
   (req, res) => {
     Profile.findOneAndRemove({ _id: req.params.id })
       .then(profile => {

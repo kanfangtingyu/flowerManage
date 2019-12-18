@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <div class="container">
-            <h1 class="title">超市管理----资金/货物</h1>
+            <h1 class="title">花花世界鲜花网上商城</h1>
         </div>
     </div>
 </template>

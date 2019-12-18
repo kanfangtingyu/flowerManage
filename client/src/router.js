@@ -7,7 +7,7 @@ import Login from './views/Login'
 import Home from './views/Home'
 import InfoShow from './views/InfoShow'
 import FoundList from './views/FoundList'
-import Things from './views/Things'
+import Things from './views/Flower'
 import Things2 from './views/Things2'
 import Things3 from './views/Things3'
 

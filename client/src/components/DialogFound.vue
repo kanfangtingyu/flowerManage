@@ -15,30 +15,28 @@
           label-width="120px"
           style="margin:10px;width:auto;"
         >
-          <el-form-item label="收支类型:">
-            <el-select v-model="form.type" placeholder="收支类型">
-              <el-option
-                v-for="(formtype, index) in format_type_list"
-                :key="index"
-                :label="formtype"
-                :value="formtype"
-              ></el-option>
-            </el-select>
+
+          <el-form-item prop="describe" label="鲜花名称:">
+            <p type="describe">{{form.thingname}}</p>
           </el-form-item>
 
-          <el-form-item prop="describe" label="收支描述:">
-            <el-input type="describe" v-model="form.describe"></el-input>
+          <el-form-item prop="income" label="剩余数量:">
+            <p type="describe">{{form.thingnumber}}</p>
           </el-form-item>
 
-          <el-form-item prop="income" label="收入:">
-            <el-input type="income" v-model="form.income"></el-input>
+          <el-form-item prop="income" label="单价:">
+            <p type="describe">{{form.single}}</p>
           </el-form-item>
 
-          <el-form-item prop="expend" label="支出:">
-            <el-input type="expend" v-model="form.expend"></el-input>
+          <el-form-item label="购买数量:">
+            <el-input type="expend" v-model="form.number"></el-input>
           </el-form-item>
 
-          <el-form-item label="备注:">
+          <el-form-item label="总价:">
+            <p>{{ form.number *  form.single}}</p>
+          </el-form-item>
+
+          <el-form-item label="送货地址:">
             <el-input type="textarea" v-model="form.remark"></el-input>
           </el-form-item>
 
@@ -59,6 +57,10 @@ export default {
     dialog: Object,
     form: Object
   },
+  mounted() {
+    console.log(this.form)
+  },
+  
   data() {
     return {
       format_type_list: [
@@ -66,9 +68,6 @@ export default {
         "出售",
       ],
       form_rules: {
-        describe: [
-          { required: true, message: "收支描述不能为空！", trigger: "blur" }
-        ],
         income: [
           { trigger: "blur" }
         ],
@@ -94,6 +93,7 @@ export default {
       this.$refs[form].validate(valid => {
         if (valid) {
           //表单数据验证完成之后，提交数据;
+          console.log('fei',form)
           const url =
             this.dialog.option == "add" ? "add" : `edit/${this.form.id}`;
           this.$axios.post(`/api/profile/${url}`, this.form).then(res => {

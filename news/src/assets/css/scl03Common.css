@@ -1,0 +1,147 @@
+.scl03 {
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+.scl03 .spe-row {
+  margin-bottom: 13px;
+}
+.scl03 .header-text {
+  font-weight: bold;
+  font-size: 14px;
+}
+.scl03 .row-text {
+  height: 32px;
+  width: 100%;
+  line-height: 32px;
+  background: #dcdcdc;
+  text-align: center;
+  color: #4a4a4a;
+  font-size: 14px;
+  font-weight: bold;
+}
+.scl03 .warn-text {
+  text-align: center;
+  height: 175px;
+  line-height: 193px;
+}
+.scl03 .left-text {
+  float: left;
+  font-family: 'Meiryo UI';
+  font-size: 14px;
+  color: #4a4a4a;
+  letter-spacing: 0.27px;
+  font-weight: bold;
+}
+.scl03 .right-text {
+  float: right;
+  font-family: 'Meiryo UI';
+  font-size: 14px;
+  color: #4a4a4a;
+  letter-spacing: 0.27px;
+  font-weight: bold;
+}
+.scl03 .out-space {
+  padding-left: 20px;
+  margin-top: 14px;
+  padding-right: 20px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #d7d7d7;
+}
+.scl03 .all-row-height {
+  height: 129px;
+}
+.scl03 .row-height {
+  height: 25px;
+}
+.scl03 .rec-num {
+  float: right;
+  font-family: 'Meiryo UI';
+  font-size: 14px;
+  color: #000000;
+  letter-spacing: 0.27px;
+}
+.scl03 .warn-maintxt {
+  display: flex;
+  width: 100%;
+  height: 175px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.scl03 .warn-maintxt-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.scl03 .warn-icons {
+  width: 30px !important;
+  height: 27px !important;
+  margin-bottom: 18px;
+}
+.scl03 .warn-word {
+  width: 100%;
+  text-align: center;
+  color: #fd596d;
+  font-family: Meiryo;
+  font-size: 16px;
+  line-height: 22px;
+}
+.scl03 .el-card__header {
+  background: #00438b;
+  border-radius: 2px 2px 0 0;
+  height: 32px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 0px;
+  line-height: 32px;
+}
+.scl03 .el-card {
+  border: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+.scl03 .el-card__body {
+  padding: 0px;
+}
+.scl03 .row-center {
+  text-align: center;
+  height: 37px;
+  line-height: 37px;
+}
+.scl03 .row-center-dis {
+  text-align: center;
+  height: 37px;
+  line-height: 37px;
+  border-top: 1px solid #d7d7d7;
+}
+.scl03 .shoryaku-kigo {
+  font-family: 'Meiryo UI';
+  font-size: 14px;
+  color: #00438b;
+  cursor: pointer;
+}
+.scl03 .shoryaku-kigo:hover {
+  text-decoration: underline;
+}
+.scl03 .shoryaku-kigo-dis {
+  font-family: 'Meiryo UI';
+  font-size: 14px;
+  color: #9b9b9b;
+}
+.scl03 .scl03-size {
+  width: 300px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+.scl03 .nodata-size {
+  height: 257px;
+}
+.scl03 .data-size {
+  height: 276px;
+}
+.scl03 .title-height {
+  height: 157px;
+}

@@ -36,13 +36,19 @@
               <span style="margin-left: 10px">{{ scope.row.date }}</span>
             </template>
           </el-table-column>
-          <el-table-column prop="thingname" label="货物名称" align="center" width="150"></el-table-column>
-          <el-table-column prop="thingnumber" label="货物数量" align="center" width="180"></el-table-column>
+          <el-table-column prop="thingname" label="鲜花名称" align="center" width="150"></el-table-column>
+          <el-table-column prop="thingnumber" label="鲜花数量" align="center" width="180"></el-table-column>
           <el-table-column prop="single" label="单价" align="center" width="170"></el-table-column>
-          <el-table-column prop="allmoney" label="总价" align="center" width="170"></el-table-column>
-          <el-table-column prop="expend" label="备注" align="center" width="220"></el-table-column>
-          <el-table-column prop="operation" align="center" label="操作" fixed="right" width="180">
+          <el-table-column prop="expend" label="习性" align="center" width="220"></el-table-column>
+          <el-table-column prop="operation" align="center" label="操作" width="240">
             <template slot-scope="scope">
+              <el-button
+                type="warning"
+                icon="edit"
+                size="small"
+                @click="onBuy(scope.row)"
+                v-if="user.identity =='manager'"
+              >购买</el-button>
               <el-button
                 type="warning"
                 icon="edit"
@@ -79,13 +85,14 @@
         </el-row>
       </div>
       <!-- 弹框页面 -->
-      <DialogThing :dialog="dialog" :form="form" @update="getthing"></DialogThing>
+      <DialogThing :dialog="dialog1" :form="form" @update="getthing"></DialogThing>
+      <DialogFound :dialog="dialog2" :form="form"></DialogFound>
     </div>
   </template>
   
   <script>
   import DialogThing from "../components/DialogThing";
-  
+  import DialogFound from "../components/DialogFound";
   export default {
     name: "things",
     data() {
@@ -94,7 +101,12 @@
         tableData: [],
         allTableData: [],
         filterTableData: [],
-        dialog: {
+        dialog1: {
+          show: false,
+          title: "",
+          option: "edit"
+        },
+        dialog2: {
           show: false,
           title: "",
           option: "edit"
@@ -126,7 +138,8 @@
       }
     },
     components: {
-      DialogThing
+      DialogThing,
+      DialogFound
     },
     created() {
       this.getthing();
@@ -145,12 +158,28 @@
       },
       onEditMoney(row) {
         // 编辑
-        this.dialog = {
+        this.dialog1 = {
           show: true,
-          title: "修改货物信息",
+          title: "修改鲜花信息",
           option: "edit"
         };
         this.form = {
+          thingname: row.thingname,
+          thingnumber: row.thingnumber,
+          single: row.single,
+          expend: row.expend,
+          id: row._id
+        };
+      },
+      onBuy(row) {
+        // 编辑
+        this.dialog2 = {
+          show: true,
+          title: "添加订单",
+          option: "edit"
+        };
+        this.form = {
+          number: 1,
           thingname: row.thingname,
           thingnumber: row.thingnumber,
           single: row.single,
@@ -168,7 +197,7 @@
       onAddMoney() {
         console.log('asf')
         // 添加
-        this.dialog = {
+        this.dialog1 = {
           show: true,
           title: "添加资金信息",
           option: "add"

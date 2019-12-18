@@ -1,0 +1,238 @@
+.mcl03 .main-card-center {
+  min-height: 200px;
+}
+.mcl03 .first-row {
+  width: calc((100vw - 160px) * 0.53);
+  min-width: 80px;
+  overflow: hidden;
+  word-break: keep-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.mcl03 .second-row {
+  width: calc((100vw - 160px) * 0.24);
+  min-width: 80px;
+}
+.mcl03 .third-row {
+  width: calc((100vw - 160px) * 0.24);
+  min-width: 80px;
+}
+.mcl03 .title {
+  float: left;
+  width: 47%;
+  cursor: pointer;
+}
+.mcl03 .title-Img {
+  margin-left: 20px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: middle;
+}
+.mcl03 .title-left {
+  margin-left: 10px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: middle;
+}
+.mcl03 .main-card-title {
+  font-family: 'Meiryo UI';
+  font-size: 14px;
+  color: #4a4a4a;
+  letter-spacing: 0.27px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.mcl03 .number-rec {
+  color: #4a4a4a;
+  font-family: 'Meiryo UI';
+  font-size: 14px;
+  letter-spacing: 0.27px;
+  min-width: 100px;
+}
+.mcl03 .page-box {
+  text-align: center;
+  position: relative;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.mcl03 .kennsu-filter {
+  width: 128px;
+}
+.mcl03 .data-num {
+  font-family: 'Meiryo UI';
+  font-size: 14px;
+  color: #4a4a4a;
+  letter-spacing: 0;
+  line-height: 14px;
+}
+.mcl03 .warn-txt {
+  display: flex;
+  width: 100%;
+  height: 268px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.mcl03 .warn-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.mcl03 .warni-conm {
+  width: 36px !important;
+  height: 32px !important;
+  margin-bottom: 18px;
+}
+.mcl03 .warn-word {
+  width: 100%;
+  text-align: center;
+  color: #fd596d;
+  font-family: Meiryo;
+  font-size: 16px;
+  line-height: 22px;
+}
+.mcl03 .siborikomiBtn {
+  border: 1px solid #00438b;
+  border-radius: 3px;
+  border-radius: 3px;
+  width: 80px;
+  height: 27px;
+  /* line-height: 28px; */
+  padding: 0px;
+  font-family: 'Meiryo UI';
+  font-size: 14px;
+  color: #00438b;
+  letter-spacing: 0;
+  margin-right: 20px;
+}
+.mcl03 .kennsuTotal {
+  display: inline-block;
+  width: 147px;
+  font-family: 'Meiryo UI';
+  font-size: 14px;
+  color: #4a4a4a;
+  letter-spacing: 0.27px;
+}
+.mcl03 .data-num {
+  font-family: 'Meiryo UI';
+  font-size: 14px;
+  color: #4a4a4a;
+  letter-spacing: 0;
+  line-height: 14px;
+}
+.mcl03 .content-footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 18px;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.mcl03 .content-footer .el-pagination {
+  margin-top: 15px;
+}
+.mcl03 .box-card {
+  width: 935px;
+  shadow: never;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.mcl03 .span-line:hover {
+  text-decoration: underline;
+}
+.mcl03 .header {
+  width: 100%;
+  height: 32px;
+  background: #00438b;
+  border-radius: 0px 4px 0px 0px;
+  display: flex;
+  align-items: center;
+}
+.mcl03 .title-center {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: bold;
+}
+.mcl03 .main-card-border {
+  padding: 20px;
+}
+.mcl03 .content-title {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+.mcl03 .main-card-text {
+  float: left;
+  font-weight: bold;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+.mcl03 .text-height {
+  height: 30px;
+  line-height: 30px;
+}
+.mcl03 .text-content {
+  float: left;
+  color: #00438b;
+  cursor: pointer;
+  width: 100%;
+  overflow: hidden;
+  word-break: keep-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.mcl03 .text-height:hover {
+  background: #ededed;
+}
+.mcl03 .box-card .el-card__header {
+  border-bottom: 1px solid #303133 !important;
+}
+.mcl03 .first-select .el-input {
+  width: 60px;
+  height: 28px;
+}
+.mcl03 .first-select .el-input span.el-input__suffix span i {
+  color: #00438b;
+}
+.mcl03 .el-pager {
+  display: flex;
+  align-items: center;
+}
+.mcl03 .el-pager li {
+  font-family: 'Meiryo UI';
+  margin: 0 10px;
+  color: #00438b;
+}
+.mcl03 .el-input--mini .el-input__inner {
+  border: 1px solid #979797;
+}
+.mcl03 .el-input.is-focus .el-input__inner {
+  border: 1px solid #00438b;
+}
+.mcl03 .el-input.is-disabled .el-input__inner {
+  border: 1px solid #dcdfe6;
+}
+.mcl03 .first-select .el-input__inner {
+  padding-left: 10px;
+}
+.mcl03 .no-result-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a4a4a;
+  font-family: 'Meiryo UI';
+  font-size: 16px;
+  line-height: 20px;
+  height: 200px;
+}

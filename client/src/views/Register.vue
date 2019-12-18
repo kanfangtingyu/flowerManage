@@ -2,7 +2,7 @@
   <div class="register">
     <section class="form_container">
       <div class="manage_tip">
-        <span class="title">超市管理系统</span>
+        <span class="title">花花世界鲜花网上商城</span>
       </div>
       <el-form
         :model="registerUser"

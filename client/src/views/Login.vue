@@ -2,7 +2,7 @@
     <div class="login">
         <section class="form_container">
             <div class="manage_tip">
-                <span class="title">超市管理系统</span>
+                <span class="title">花花世界鲜花网上商城</span>
             </div>
             <el-form :model="loginUser" :rules="rules" ref="loginForm" class="loginForm" label-width="60px">
                 <el-form-item label="邮箱" prop="email">

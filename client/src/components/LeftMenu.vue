@@ -44,9 +44,8 @@ export default {
           name: "管理系统",
           path: "fund",
           children: [
-            { path: "foundlist", name: "资金" },
-            { path: "things", name: "货物" },
-            { path: "things2", name: "赤字" },
+            { path: "foundlist", name: "账单" },
+            { path: "things", name: "鲜花" },
             { path: "things3", name: "代办项目" },
           ]
         },

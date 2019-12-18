@@ -1,0 +1,247 @@
+@media screen and (min-width: 1024px) {
+  #responsive {
+    width: 100% !important;
+  }
+  #responsive #header-bar .header-search .el-autocomplete .el-input__inner {
+    width: calc(100vw - 700px) !important;
+    min-width: 324px;
+  }
+  #responsive .header-back {
+    width: 100%;
+  }
+  #responsive .is-fixed {
+    width: 100% !important;
+  }
+  #responsive .nav {
+    width: 100% !important;
+  }
+  #responsive .main-content-bottom {
+    width: calc(100vw - 2px - 17px) !important;
+  }
+  #responsive .default-body {
+    width: calc(100vw - 42px * 2) !important;
+  }
+  #responsive .main-content .main-content-bottom .get-last-card-show-div {
+    width: calc(100vw - 42px * 2) !important;
+  }
+  #responsive .clientmsg {
+    width: 100% !important;
+  }
+  #responsive .drag {
+    width: calc(100vw - 42px * 2 - 65px) !important;
+  }
+  #responsive .item-width {
+    width: calc((100vw - 42px * 2 - 20px * 5) / 4) !important;
+  }
+  #responsive .item-contents-width {
+    width: calc((100vw - 42px * 2 - 20px * 5) / 4) !important;
+  }
+  #responsive .half-width {
+    width: calc(
+      (((100vw - 42px * 2) - 20px * 5 - 0.8px) / 4) * 2 + 20px
+    ) !important;
+  }
+  /* #responsive .tokubetu {
+    width: calc((((100vw - 42px*2) - 20px*5 - 0.8px)/4)*3 + 40px) !important;
+    margin-right: 20px !important;
+  } */
+  #responsive .add-subcard-dialog .el-dialog.el-dialog--center {
+    width: 835px !important;
+  }
+  #responsive .same-box {
+    width: 240px;
+  }
+  #responsive .listBox {
+    width: 240px;
+  }
+  #responsive .el-card.is-always-shadow {
+    width: calc((100vw - 42px * 2 - 20px * 2) / 3) !important;
+  }
+}
+@media screen and (max-width: 704px) {
+  #responsive .el-card.is-always-shadow {
+    width: 300px !important;
+  }
+  #responsive {
+    width: 700px !important;
+  }
+  #responsive .nav {
+    width: calc(100vw - 2px - 10px) !important;
+  }
+  #responsive .is-fixed {
+    width: calc(100vw - 2px - 10px) !important;
+  }
+  #responsive .clientmsg {
+    width: 100% !important;
+  }
+  #responsive .main-content .main-content-bottom .get-last-card-show-div {
+    width: 631px !important;
+  }
+  #responsive .add-subcard-dialog .el-dialog.el-dialog--center {
+    width: calc(100% * 0.8) !important;
+    min-width: 560px;
+  }
+  #responsive .same-box {
+    width: calc(((100vw * 0.8) - 60px - 28px) / 2) !important;
+    min-width: 240px;
+  }
+  #responsive .listBox {
+    width: calc(((100vw * 0.8) - 60px - 28px) / 2) !important;
+    min-width: 240px;
+  }
+}
+@media screen and (min-width: 705px) and (max-width: 1023px) {
+  #responsive .el-card.is-always-shadow {
+    width: calc((100vw - 42 * 2px - 20px) / 2) !important;
+  }
+  #responsive {
+    width: 100% !important;
+  }
+  #responsive .nav {
+    width: 100% !important;
+  }
+  #responsive .is-fixed {
+    width: 100% !important;
+  }
+  #responsive .clientmsg {
+    width: 100% !important;
+  }
+  #responsive .add-subcard-dialog .el-dialog.el-dialog--center {
+    width: calc(100% * 0.8) !important;
+  }
+  #responsive .same-box {
+    width: calc(((100vw * 0.8) - 60px - 28px) / 2) !important;
+  }
+  #responsive .listBox {
+    width: calc(((100vw * 0.8) - 60px - 28px) / 2) !important;
+  }
+}
+@media screen and (max-width: 794px) {
+  #responsive .main-content .main-content-bottom .get-last-card-show-div {
+    width: calc(100vw - 42px - 37px) !important;
+    min-width: 631px;
+  }
+  #responsive {
+    width: 100% !important;
+    min-width: 700px;
+  }
+  #responsive .drag {
+    width: calc(100vw - 42px - 37px - 65px) !important;
+    min-width: 561px !important;
+  }
+  #responsive .default-body {
+    min-width: 626px !important;
+  }
+  #responsive .nav {
+    width: 100% !important;
+    min-width: 698px;
+  }
+  #responsive .is-fixed {
+    width: 100% !important;
+  }
+  #responsive .clientmsg {
+    width: 100% !important;
+  }
+  #responsive .default-content {
+    width: 710px !important;
+  }
+  #responsive .item-width {
+    /* width: calc(((100vw - 42px*2) - 20px*4 - 0.8px)/3) !important */
+    width: 210px !important;
+  }
+  #responsive .item-contents-width {
+    /* width: calc(((100vw - 42px*2) - 20px*4 - 0.8px)/3) !important */
+    width: 210px !important;
+  }
+  /* #responsive .tokubetu {
+    width: calc((((100vw - 42px*2) - 20px*4 - 0.8px)/3)*3 + 40px) !important;
+    margin-right: 20px !important;
+  } */
+  #responsive .half-width {
+    width: calc(
+      (((100vw - 42px * 2) - 20px * 4 - 0.8px) / 3) * 4 + 20px
+    ) !important;
+  }
+}
+@media screen and (min-width: 795px) and (max-width: 1023px) {
+  #responsive .main-content {
+    overflow-x: hidden;
+  }
+  #responsive .main-content-bottom {
+    width: 100% !important;
+  }
+  #responsive {
+    width: 100% !important;
+  }
+  #responsive .main-content .main-content-bottom .get-last-card-show-div {
+    width: calc(100vw - 42px * 2) !important;
+  }
+  #responsive .nav {
+    width: 100% !important;
+  }
+  #responsive .is-fixed {
+    width: 100% !important;
+  }
+  #responsive .clientmsg {
+    width: 100% !important;
+  }
+  #responsive .default-body {
+    width: calc(100vw - 42px * 2 - 2px) !important;
+  }
+  #responsive .drag {
+    width: calc(100vw - 42px * 2 - 65px) !important;
+  }
+  #responsive .default-content {
+    width: calc(100vw - 42px * 2) !important;
+  }
+  #responsive .item-width {
+    width: calc(((100vw - 42px * 2) - 20px * 4 - 0.8px) / 3) !important;
+  }
+  #responsive .item-contents-width {
+    width: calc(((100vw - 42px * 2) - 20px * 4 - 0.8px) / 3) !important;
+  }
+  /* #responsive .tokubetu {
+    width: calc((((100vw - 42px*2) - 20px*4 - 0.8px)/3)*3 + 40px) !important;
+    margin-right: 20px !important;
+  } */
+  #responsive .half-width {
+    width: calc(
+      (((100vw - 42px * 2) - 20px * 4 - 0.8px) / 3) * 2 + 20px
+    ) !important;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  .idpf-view-container
+    #header-bar
+    .header-search
+    .el-autocomplete
+    .el-input__inner {
+    width: calc(100vw - 700px) !important;
+    min-width: 140px;
+  }
+  #responsive {
+    min-width: 700px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .idpf-view-container
+    #header-bar
+    .header-search
+    .el-autocomplete
+    .el-input__inner {
+    width: 140px !important;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  #responsive .content-name {
+    width: calc(100vw - 665px) !important;
+    min-width: 50px;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

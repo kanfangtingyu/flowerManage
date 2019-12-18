@@ -16,11 +16,11 @@
             style="margin:10px;width:auto;"
           >
             
-            <el-form-item prop="thingname" label="货物名称:">
+            <el-form-item prop="thingname" label="鲜花名称:">
               <el-input type="thingname" v-model="form.thingname"></el-input>
             </el-form-item>
   
-            <el-form-item prop="thingnumber" label="货物数量:">
+            <el-form-item prop="thingnumber" label="鲜花数量:">
               <el-input type="thingnumber" v-model="form.thingnumber"></el-input>
             </el-form-item>
   

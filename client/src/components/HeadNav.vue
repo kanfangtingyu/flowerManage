@@ -3,7 +3,7 @@
         <el-row>
             <el-col :span="6" class='logo-container'>
                 <img src="../assets/logo.png" class='logo' alt="">
-                <span class='title'>超市管理系统</span>
+                <span class='title'>花花世界鲜花网上商城</span>
             </el-col>
             <el-col :span='6' class="user">
                 <div class="userinfo">

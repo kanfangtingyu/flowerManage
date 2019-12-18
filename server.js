@@ -11,6 +11,13 @@ const things = require('./routes/api/things');
 const things2 = require('./routes/api/things2');
 const things3 = require('./routes/api/things3');
 
+var xlsx = require('node-xlsx');
+var fs = require('fs');
+
+const data = [[1, 2, 3], [true, false, null, 'sheetjs'], ['foo', 'bar', new Date('2014-02-19T14:30Z'), '0.3'], ['baz', null, 'qux']];
+var buffer = xlsx.build([{name: "mySheetName", data: data}]); // Returns a buffer
+fs.writeFileSync('book.xlsx', buffer, {'flag':'w'})
+
 // DB config
 const db = require('./config/keys').mongoURI;
 
