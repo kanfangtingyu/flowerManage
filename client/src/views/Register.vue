@@ -25,8 +25,8 @@
         </el-form-item>
         <el-form-item label="选择身份">
           <el-select v-model="registerUser.identity" placeholder="请选择身份">
-            <el-option label="管理员" value="manager"></el-option>
-            <el-option label="员工" value="employee"></el-option>
+            <el-option label="销售员" value="manager"></el-option>
+            <el-option label="购买者" value="user"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item>
@@ -92,7 +92,7 @@ export default {
         if (valid) {
           this.$axios
             .post("/api/users/register", this.registerUser)
-            .then(res => {
+            .then(() => {
               // 注册成功
               this.$message({
                 message: "注册成功！",

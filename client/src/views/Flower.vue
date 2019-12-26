@@ -1,6 +1,6 @@
 <template>
     <div class="fillcontain">
-      <div>
+      <div :src="'a'">
         <el-form :inline="true" ref="search_data" :model="search_data">
           <el-form-item style="opacity: 0" label="投标时间筛选:">
             <el-date-picker v-model="search_data.startTime" type="datetime" placeholder="选择开始时间"></el-date-picker>--
@@ -24,7 +24,7 @@
         <el-table
           v-if="tableData.length > 0"
           :data="tableData"
-          max-height="450"
+          max-height="700"
           border
           :default-sort="{prop: 'date', order: 'descending'}"
           style="width: 100%"
@@ -37,6 +37,11 @@
             </template>
           </el-table-column>
           <el-table-column prop="thingname" label="鲜花名称" align="center" width="150"></el-table-column>
+          <el-table-column label="鲜花图片" align="center" width="150">
+            <template slot-scope="scope">
+              <img :src="scope.row.src"/>
+            </template>
+          </el-table-column>
           <el-table-column prop="thingnumber" label="鲜花数量" align="center" width="180"></el-table-column>
           <el-table-column prop="single" label="单价" align="center" width="170"></el-table-column>
           <el-table-column prop="expend" label="习性" align="center" width="220"></el-table-column>
@@ -47,7 +52,7 @@
                 icon="edit"
                 size="small"
                 @click="onBuy(scope.row)"
-                v-if="user.identity =='manager'"
+                v-if="user.identity !=='manager'"
               >购买</el-button>
               <el-button
                 type="warning"
@@ -92,11 +97,12 @@
   
   <script>
   import DialogThing from "../components/DialogThing";
-  import DialogFound from "../components/DialogFound";
+  import DialogFound from "../components/profile";
   export default {
     name: "things",
     data() {
       return {
+        url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
         allthingmoney:'',
         tableData: [],
         allTableData: [],
@@ -136,6 +142,7 @@
       user() {
         return this.$store.getters.user;
       }
+      
     },
     components: {
       DialogThing,
@@ -176,7 +183,7 @@
         this.dialog2 = {
           show: true,
           title: "添加订单",
-          option: "edit"
+          option: "add"
         };
         this.form = {
           number: 1,
@@ -187,9 +194,9 @@
           id: row._id
         };
       },
-      onDeleteMoney(row, index) {
+      onDeleteMoney(row) {
         // 删除
-        this.$axios.delete(`/api/things/delete/${row._id}`).then(res => {
+        this.$axios.delete(`/api/things/delete/${row._id}`).then(() => {
           this.$message("删除成功");
           this.getthing();
         });
@@ -199,7 +206,7 @@
         // 添加
         this.dialog1 = {
           show: true,
-          title: "添加资金信息",
+          title: "添加鲜花信息",
           option: "add"
         };
         this.form = {
@@ -238,6 +245,9 @@
         this.tableData = this.allTableData.filter((item, index) => {
           return index < this.paginations.page_size;
         });
+        this.tableData.forEach((item)=>{
+          item.src = require('@/assets/' + item.thingname + '.png')
+        })
       },
       
     }

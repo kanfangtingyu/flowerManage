@@ -16,6 +16,22 @@ router.get('/test', (req, res) => {
   res.json({ msg: 'login works' });
 });
 
+// @route  GET api/users/alluser
+// @desc   返回的请求的json数据
+// @access public
+router.get('/alluser', (req, res) => {
+  User.find()
+    .then(User => {
+      if (!User) {
+        return res.status(404).json('没有任何内容');
+      }
+
+      res.json(User);
+    })
+    .catch(err => res.status(404).json(err));
+});
+
+
 // @route  POST api/users/register
 // @desc   返回的请求的json数据
 // @access public
@@ -105,6 +121,21 @@ router.get(
       email: req.user.email,
       identity: req.user.identity
     });
+  }
+);
+
+// @route  POST api/users/delete/:id
+// @desc   删除信息接口
+// @access Private
+router.delete(
+  '/delete/:id',
+  //passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    User.findOneAndRemove({ _id: req.params.id })
+      .then(User => {
+        User.save().then(User => res.json());
+      })
+      .catch(err => res.status(404).json('删除失败!'));
   }
 );
 

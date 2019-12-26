@@ -3,20 +3,20 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const ProfileSchema = new Schema({
-  type: {
+  thingname: {
     type: String
   },
-  describe: {
+  thingnumber: {
     type: String
   },
-  income: {
-    type: String,
+  single: {
+    type: Number,
   },
-  expend: {
-    type: String,
+  number: {
+    type: Number,
   },
-  cash: {
-    type: String,
+  allnumber: {
+    type: Number,
   },
   remark: {
     type: String

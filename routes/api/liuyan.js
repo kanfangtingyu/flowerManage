@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-const thing = require('../../models/Things3');
+const thing = require('../../models/liuyan');
 
 // GET api/things/test
 // 返回的请求的json数据

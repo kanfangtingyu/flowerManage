@@ -6,28 +6,28 @@ const passport = require('passport');
 const Profile = require('../../models/Profile');
 
 // 测试端口好不好用
-// @route  GET api/profiles/test
+// @route  GET api/profile/test
 // @desc   返回的请求的json数据
 // @access public
 router.get('/test', (req, res) => {
   res.json({ msg: 'profile works' });
 });
 
-// @route  POST api/profiles/add
+// @route  POST api/profile/add
 // @desc   创建信息接口
 // @access Private
 router.post(
   '/add',
-  passport.authenticate('jwt', { session: false }),
+  // passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const profileFields = {};
 
-    if (req.body.type) profileFields.type = req.body.type;
-    if (req.body.describe) profileFields.describe = req.body.describe;
-    if (req.body.income) profileFields.income = req.body.income;
-    if (req.body.expend) profileFields.expend = req.body.expend;
-    if (req.body.cash) profileFields.cash = req.body.cash;
+    if (req.body.thingname) profileFields.thingname = req.body.thingname;
+    if (req.body.thingnumber) profileFields.thingnumber = req.body.thingnumber;
+    if (req.body.single) profileFields.single = req.body.single;
+    if (req.body.number) profileFields.number = req.body.number;
     if (req.body.remark) profileFields.remark = req.body.remark;
+    profileFields.allnumber = req.body.single * req.body.number
 
     new Profile(profileFields).save().then(profile => {
       res.json(profile);
@@ -35,7 +35,7 @@ router.post(
   }
 );
 
-// @route  GET api/profiles
+// @route  GET api/profile
 // @desc   获取所有信息
 // @access Private
 
@@ -55,7 +55,7 @@ router.get(
   }
 );
 
-// @route  GET api/profiles/:id
+// @route  GET api/profile/:id
 // @desc   获取单个信息
 // @access Private
 
@@ -75,7 +75,7 @@ router.get(
   }
 );
 
-// @route  POST api/profiles/edit
+// @route  POST api/profile/edit
 // @desc   编辑信息接口
 // @access Private
 router.post(
@@ -84,11 +84,11 @@ router.post(
   (req, res) => {
     const profileFields = {};
 
-    if (req.body.type) profileFields.type = req.body.type;
-    if (req.body.describe) profileFields.describe = req.body.describe;
-    if (req.body.income) profileFields.income = req.body.income;
-    if (req.body.expend) profileFields.expend = req.body.expend;
-    if (req.body.cash) profileFields.cash = req.body.cash;
+    if (req.body.thingname) profileFields.thingname = req.body.thingname;
+    if (req.body.thingnumber) profileFields.thingnumber = req.body.thingnumber;
+    if (req.body.single) profileFields.single = req.body.single;
+    if (req.body.number) profileFields.number = req.body.number;
+    if (req.body.allnumber) profileFields.allnumber = req.body.allnumber;
     if (req.body.remark) profileFields.remark = req.body.remark;
 
     Profile.findOneAndUpdate(
@@ -99,7 +99,7 @@ router.post(
   }
 );
 
-// @route  POST api/profiles/delete/:id
+// @route  POST api/profile/delete/:id
 // @desc   删除信息接口
 // @access Private
 router.delete(

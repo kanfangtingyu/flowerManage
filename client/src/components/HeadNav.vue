@@ -2,7 +2,6 @@
     <header class="head-nav">
         <el-row>
             <el-col :span="6" class='logo-container'>
-                <img src="../assets/logo.png" class='logo' alt="">
                 <span class='title'>花花世界鲜花网上商城</span>
             </el-col>
             <el-col :span='6' class="user">
@@ -94,6 +93,7 @@ export default {
   display: inline-block;
 }
 .title {
+  margin-left: 30px;
   vertical-align: middle;
   font-size: 22px;
   font-family: "Microsoft YaHei";

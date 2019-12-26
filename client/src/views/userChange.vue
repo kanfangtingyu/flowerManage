@@ -9,18 +9,9 @@
           <el-form-item  style="opacity: 0">
             <el-button type="primary" size="small" icon="search" @click="onScreeoutMoney()">筛选</el-button>
           </el-form-item>
-          <el-form-item class="btnRight">
-            <el-button
-              type="primary"
-              size="small"
-              icon="view"
-              @click="onAddMoney()"
-              v-if="user.identity =='manager'"
-            >添加</el-button>
-          </el-form-item>
         </el-form>
       </div>
-      <div class="table_container">
+      <div v-if="user.identity =='manager'" class="table_container">
         <el-table
           v-if="tableData.length > 0"
           :data="tableData"
@@ -29,18 +20,11 @@
           :default-sort="{prop: 'date', order: 'descending'}"
           style="width: 100%"
         >
-          <el-table-column prop="index" label="处理优先度" align="center" width="180"></el-table-column>
-          <el-table-column prop="name" label="名称" align="center" width="170"></el-table-column>
-          <el-table-column prop="describe" label="描述" align="center"></el-table-column>
+          <el-table-column prop="name" label="用户名" align="center" width="180"></el-table-column>
+          <el-table-column prop="email" label="邮箱" align="center" width="170"></el-table-column>
+          <el-table-column prop="identity" label="身份" align="center"></el-table-column>
           <el-table-column prop="operation" align="center" label="操作" fixed="right">
             <template slot-scope="scope">
-              <el-button
-                type="warning"
-                icon="edit"
-                size="small"
-                @click="onEditMoney(scope.row)"
-                v-if="user.identity =='manager'"
-              >编辑</el-button>
               <el-button
                 type="danger"
                 icon="delete"
@@ -68,6 +52,9 @@
             </div>
           </el-col>
         </el-row>
+      </div>
+      <div v-else>
+        <p>无权限</p>
       </div>
       <!-- 弹框页面 -->
       <DialogThing :dialog="dialog" :form="form" @update="getthing"></DialogThing>
@@ -123,7 +110,7 @@
     methods: {
       getthing() {
         // 获取表格数据
-        this.$axios("/api/things2").then(res => {
+        this.$axios("/api/users/alluser").then(res => {
           // this.tableData = res.data;
           this.allTableData = res.data;
           this.filterTableData = res.data;
@@ -135,19 +122,19 @@
         // 编辑
         this.dialog = {
           show: true,
-          title: "修改货物信息",
+          title: "修改用户信息",
           option: "edit"
         };
         this.form = {
-          index: row.index,
           name: row.name,
+          email: row.email,
           describe: row.describe,
           id: row._id
         };
       },
-      onDeleteMoney(row, index) {
+      onDeleteMoney(row) {
         // 删除
-        this.$axios.delete(`/api/things2/delete/${row._id}`).then(res => {
+        this.$axios.delete(`/api/users/delete/${row._id}`).then(() => {
           this.$message("删除成功");
           this.getthing();
         });

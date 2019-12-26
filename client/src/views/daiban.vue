@@ -39,7 +39,6 @@
                 icon="edit"
                 size="small"
                 @click="onEditMoney(scope.row)"
-                v-if="user.identity =='manager'"
               >编辑</el-button>
               <el-button
                 type="danger"
@@ -135,7 +134,7 @@
         // 编辑
         this.dialog = {
           show: true,
-          title: "修改货物信息",
+          title: "修改代办信息",
           option: "edit"
         };
         this.form = {
@@ -145,9 +144,9 @@
           id: row._id
         };
       },
-      onDeleteMoney(row, index) {
+      onDeleteMoney(row) {
         // 删除
-        this.$axios.delete(`/api/things3/delete/${row._id}`).then(res => {
+        this.$axios.delete(`/api/things3/delete/${row._id}`).then(() => {
           this.$message("删除成功");
           this.getthing();
         });
@@ -157,7 +156,7 @@
         // 添加
         this.dialog = {
           show: true,
-          title: "添加资金信息",
+          title: "添加代办信息",
           option: "add"
         };
         this.form = {

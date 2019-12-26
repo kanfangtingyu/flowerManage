@@ -53,7 +53,10 @@ export default {
           icon: "fa-asterisk",
           name: "信息管理",
           path: "info",
-          children: [{ path: "infoshow", name: "个人信息" }]
+          children: [
+            { path: "infoshow", name: "个人信息" },
+            { path: "things2", name: "用户账户管理" }
+          ]
         }
       ]
     };

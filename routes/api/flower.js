@@ -1,14 +1,15 @@
 // @login & register
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 
-const thing = require('../../models/Things2');
+const thing = require('../../models/Flower');
 
 // GET api/things/test
 // 返回的请求的json数据
 // public
 router.get('/test', (req, res) => {
-  res.json({ msg: 'thing works3' });
+  res.json({ msg: 'thing works2' });
 });
 
 // POST api/things/add
@@ -19,10 +20,12 @@ router.post(
   (req, res) => {
     const thingFields = {};
 
-    if (req.body.index) thingFields.index = req.body.index;
-    if (req.body.name) thingFields.name = req.body.name;
-    if (req.body.describe) thingFields.describe = req.body.describe;
-    console.log(req.body)
+    if (req.body.thingname) thingFields.thingname = req.body.thingname;
+    if (req.body.thingnumber) thingFields.thingnumber = req.body.thingnumber;
+    if (req.body.single) thingFields.single = req.body.single;
+    if (req.body.expend) thingFields.expend = req.body.expend;
+    thingFields.allmoney = thingFields.thingnumber*thingFields.single;
+    console.log("thing1",req.body)
     new thing(thingFields).save().then(thing => {
       console.log('tag', thingFields)
       res.json(thing);
@@ -76,9 +79,11 @@ router.post(
   (req, res) => {
     const thingFields = {};
 
-    if (req.body.index) thingFields.index = req.body.index;
-    if (req.body.name) thingFields.name = req.body.name;
-    if (req.body.describe) thingFields.describe = req.body.describe;
+    if (req.body.thingname) thingFields.thingname = req.body.thingname;
+    if (req.body.thingnumber) thingFields.thingnumber = req.body.thingnumber;
+    if (req.body.single) thingFields.single = req.body.single;
+    if (req.body.expend) thingFields.expend = req.body.expend;
+    thingFields.allmoney = thingFields.thingnumber*thingFields.single;
 
     thing.findOneAndUpdate(
       { _id: req.params.id },
