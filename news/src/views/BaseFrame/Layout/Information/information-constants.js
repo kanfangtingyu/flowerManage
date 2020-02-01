@@ -1,7 +1,0 @@
-export const INFORMATION_LEGAL = '1'
-export const INFORMATION_PERSONAL = '2'
-export const INFORMATION_DOMESTIC = '1'
-export const INFORMATION_OVERSEAS = '2'
-export const INTEG_BEF_FAIL_FLG = '1'
-export const RETENTION_FLG = '1'
-export const CUST_STATUS_CODE = '0'
